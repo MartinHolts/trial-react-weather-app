@@ -1,15 +1,23 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import "./style.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Favorites from "./pages/Favorites";
+import AllCities from "./pages/AllCities";
+import NoPage from "./pages/NoPage";
 
-const Header = () => {
+export default function App() {
 	return (
-		<>
-			<h1>Hello Style!</h1>
-			<p>Add a little style!.</p>
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Favorites />} />
+					<Route path="all-cities" element={<AllCities />} />
+					<Route path="*" element={<NoPage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
-};
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Header />);
+root.render(<App />);
