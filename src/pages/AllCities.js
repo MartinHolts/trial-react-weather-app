@@ -9,6 +9,13 @@ const AllCities = () => {
 				const response = await fetch(
 					"https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php"
 				);
+
+				/*
+				const response = await fetch(
+					"https://mocktarget.apigee.net/xml"
+				);
+				*/
+
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
 				}
