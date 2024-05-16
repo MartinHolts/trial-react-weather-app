@@ -18,10 +18,20 @@ const AllCities = () => {
 				);
 				*/
 
+				const apiKey = "3cfcda1c67930c9db4bb6363b4d06023";
+				const cityIds = [
+					"588409",
+					"588335",
+					//"590031",
+					//"589580",
+					//"589379",
+				]; // Tallinn, Tartu, Narva, Pärnu, Põltsamaa
+
 				const response = await fetch(
-					//"https://api.openweathermap.org/data/2.5/weather?lat=59.4372&lon=24.7453&appid=3cfcda1c67930c9db4bb6363b4d06023"
-					// Tallinn, Tartu, Narva, Pärnu, Põltsamaa
-					"http://api.openweathermap.org/data/2.5/group?id=588409,588335,590031,589580,589379 &units=metric&appid=3cfcda1c67930c9db4bb6363b4d06023"
+					"http://api.openweathermap.org/data/2.5/group?id=" +
+						cityIds.join(",") +
+						"&units=metric&appid=" +
+						apiKey
 				);
 
 				if (!response.ok) {
