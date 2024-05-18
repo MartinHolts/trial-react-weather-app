@@ -1,8 +1,10 @@
 import useWeatherData from "../../custom-hooks/useWeatherData";
+import useFavorites from "../../custom-hooks/useFavorites";
 import "./WeatherDataDisplay.scss";
 
 const WeatherDataDisplay = () => {
 	const [fetchedData] = useWeatherData();
+	const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
 
 	return (
 		<div className="weather-data-display">
@@ -29,6 +31,9 @@ const WeatherDataDisplay = () => {
 					<p>Humidity: {city.main.humidity}%</p>
 					<p>Wind Speed: {city.wind.speed} m/s</p>
 					<p>Visibility: {city.visibility} km</p>
+					<button onClick={() => addToFavorites(city.id)}>
+						Add to Favorites
+					</button>
 				</div>
 			))}
 		</div>
