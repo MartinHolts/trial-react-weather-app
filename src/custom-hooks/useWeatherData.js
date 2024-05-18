@@ -15,6 +15,7 @@ const useWeatherData = () => {
 					//"589379",
 				]; // Tallinn, Tartu, Narva, Pärnu, Põltsamaa
 
+				// Fetches weather data for a group of cities identified by cityIds.
 				const response = await fetch(
 					"http://api.openweathermap.org/data/2.5/group?id=" +
 						cityIds.join(",") +
