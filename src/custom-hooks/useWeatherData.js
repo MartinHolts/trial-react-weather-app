@@ -35,7 +35,14 @@ const useWeatherData = () => {
 			}
 		}
 
+		// Call fetchData initially
 		fetchData();
+
+		// Set up an interval to refetch data every 10 seconds
+		// const intervalId = setInterval(fetchData, 10000);
+
+		// Clear the interval on cleanup
+		// return () => clearInterval(intervalId);
 	}, []);
 
 	return [data];
