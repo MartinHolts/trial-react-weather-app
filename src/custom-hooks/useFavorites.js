@@ -14,6 +14,7 @@ function useFavorites() {
 	}
 
 	// The removeFromFavorites function takes a cityId as an argument and removes it from the favorites array. It filters out the city ID from the current list of favorites.
+	// old state value of favorites is used as new input to inner function as prevFavorites.
 	function removeFromFavorites(cityId) {
 		setFavorites(
 			function (prevFavorites) {
