@@ -19,9 +19,9 @@ const useWeatherData = () => {
 				// Response variable is set to contain response object, containing the status, headers, and body.
 				const response = await fetch(
 					"http://api.openweathermap.org/data/2.5/group?id=" +
-						cityIds.join(",") +
-						"&units=metric&appid=" +
-						apiKey
+					cityIds.join(",") +
+					"&units=metric&appid=" +
+					apiKey
 				);
 
 				if (!response.ok) {
