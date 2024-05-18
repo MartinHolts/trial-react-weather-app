@@ -16,6 +16,7 @@ const useWeatherData = () => {
 				]; // Tallinn, Tartu, Narva, Pärnu, Põltsamaa
 
 				// Fetches weather data for a group of cities identified by cityIds.
+				// Response variable is set to contain response object, containing the status, headers, and body.
 				const response = await fetch(
 					"http://api.openweathermap.org/data/2.5/group?id=" +
 						cityIds.join(",") +
@@ -26,6 +27,8 @@ const useWeatherData = () => {
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
 				}
+
+				// Parses the JSON response body into a JavaScript object containing the weather data for the specified cities.
 				const data = await response.json();
 				setData(data);
 			} catch (error) {

@@ -1,18 +1,21 @@
-// custom-hooks/useFavorites.js
 import { useState } from "react";
 
-const useFavorites = () => {
-	const [favorites, setFavorites] = useState([]);
+function useFavorites() {
+	var [favorites, setFavorites] = useState([]);
 
-	const addToFavorites = (cityId) => {
-		setFavorites([...favorites, cityId]);
-	};
+	// addToFavorites function takes a cityId as an argument and adds it to the favorites array. It creates a new array that includes all previous favorites plus the newly added city ID.
+	function addToFavorites(cityId) {
+		setFavorites((prevFavorites) => [...prevFavorites, cityId]);
+	}
 
-	const removeFromFavorites = (cityId) => {
-		setFavorites(favorites.filter((id) => id !== cityId));
-	};
+	// The removeFromFavorites function takes a cityId as an argument and removes it from the favorites array. It filters out the city ID from the current list of favorites.
+	function removeFromFavorites(cityId) {
+		setFavorites((prevFavorites) =>
+			prevFavorites.filter((id) => id !== cityId)
+		);
+	}
 
 	return { favorites, addToFavorites, removeFromFavorites };
-};
+}
 
 export default useFavorites;
