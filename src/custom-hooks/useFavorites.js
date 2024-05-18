@@ -18,7 +18,11 @@ function useFavorites() {
 	function removeFromFavorites(cityId) {
 		setFavorites(
 			function (prevFavorites) {
-				prevFavorites.filter((id) => id !== cityId)
+				prevFavorites.filter(
+					function (id) {
+						id !== cityId
+					}
+				);
 			}
 		);
 	}
