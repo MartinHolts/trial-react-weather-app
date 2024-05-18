@@ -1,8 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
+import "./Layout.scss";
 
 const Layout = () => {
 	return (
-		<>
+		<div className="layout">
 			<nav>
 				<ul>
 					<li>
@@ -14,8 +15,10 @@ const Layout = () => {
 				</ul>
 			</nav>
 
-			<Outlet />
-		</>
+			<div className="content">
+				<Outlet />
+			</div>
+		</div>
 	);
 };
 

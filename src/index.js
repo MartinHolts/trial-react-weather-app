@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout from "./pages/Layout/Layout";
 import Favorites from "./pages/Favorites";
 import AllCities from "./pages/AllCities";
 import NoPage from "./pages/NoPage";
