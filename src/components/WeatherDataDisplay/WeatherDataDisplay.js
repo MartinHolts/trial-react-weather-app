@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import useWeatherData from "../custom-hooks/useWeatherData";
+import useWeatherData from "../../custom-hooks/useWeatherData";
+import "./WeatherDataDisplay.scss";
 
 const WeatherDataDisplay = () => {
 	const [fetchedData] = useWeatherData();
 
 	return (
-		<div>
+		<div className="weather-data-display">
 			<h1>All cities</h1>
 			{fetchedData?.list?.map((city, index) => (
-				<div key={index}>
+				<div key={index} className="city-card">
 					<h2>{city.name}</h2>
 					<p>
 						Coordinates: Lon {city.coord.lon}, Lat {city.coord.lat}
