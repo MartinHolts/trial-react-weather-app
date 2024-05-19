@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-const useWeatherData = () => {
+const useWeatherData = function () {
 	const [data, setData] = useState("");
 
-	useEffect(() => {
+	useEffect(function () {
 		async function fetchData() {
 			try {
 				const apiKey = "3cfcda1c67930c9db4bb6363b4d06023";
@@ -43,10 +43,12 @@ const useWeatherData = () => {
 		fetchData();
 
 		// Set up an interval to refetch data every 10 seconds
-		// const intervalId = setInterval(fetchData, 10000);
+		const intervalId = setInterval(fetchData, 10000);
 
-		// Clear the interval on cleanup
-		// return () => clearInterval(intervalId);
+		// On cleanup run the function to Clear the interval.
+		return function () {
+			clearInterval(intervalId);
+		}
 	}, []);
 
 	return [data];
