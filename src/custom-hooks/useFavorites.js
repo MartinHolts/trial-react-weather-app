@@ -18,9 +18,10 @@ function useFavorites() {
 	function removeFromFavorites(cityId) {
 		setFavorites(
 			function (prevFavorites) {
+				// Creates and returns a new array with elements that are not equal to the specifcied ID.
 				prevFavorites.filter(
 					function (id) {
-						id !== cityId
+						return id !== cityId
 					}
 				);
 			}
