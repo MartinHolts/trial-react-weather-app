@@ -4,21 +4,29 @@ import useFavorites from '../../custom-hooks/useFavorites';
 import './UnifiedViewPage.scss';
 
 const UnifiedViewPage = () => {
-    const [fetchedData, setFetchedData] = useWeatherData(); // Assuming useWeatherData returns a state updater
+    const [fetchedData, setFetchedData] = useWeatherData();
     const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
     const [viewMode, setViewMode] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Filter cities based on search query and view mode
+    // Filter cities based on search query, view mode, and favorites status
     const citiesToShow = fetchedData?.list
         ? fetchedData.list.filter(city => {
+            // Filter by view mode ('all' or 'favorites')
             if (viewMode === 'all') {
+                // If view mode is 'all', include all cities
                 return true;
             } else {
+                // If view mode is 'favorites', include only favorites
                 return favorites.includes(city.id);
             }
         })
+            .filter(city => {
+                // Filter by search query
+                return city.name.toLowerCase().includes(searchQuery.toLowerCase());
+            })
         : [];
+
 
     return (
         <div className="unified-view-page">
