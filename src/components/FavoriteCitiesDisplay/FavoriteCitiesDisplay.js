@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from "react";
 import useFavorites from '../../custom-hooks/useFavorites';
-import useWeatherData from '../../custom-hooks/useWeatherData'; // Make sure this import matches the actual location of your custom hook
+import useWeatherData from '../../custom-hooks/useWeatherData';
 import "./FavoriteCitiesDisplay.scss";
 
 const FavoriteCitiesDisplay = () => {
     const { favorites, removeFromFavorites } = useFavorites();
-    const [data, setData] = useWeatherData(); // Use the fetched data
+    const [data, setData] = useWeatherData();
+    const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
-    // Check if data is available and has a list property
-    const filteredCities = data && data.list ? data.list.filter(city => favorites.includes(city.id)) : [];
+    // Filter cities based on search query
+    const filteredCities = data && data.list
+        ? data.list.filter(city =>
+            favorites.includes(city.id) &&
+            city.name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        : [];
 
     return (
         <div className="favorite-cities-display">
+            <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ marginBottom: '10px' }} // Add some margin-bottom for spacing
+            />
+
             {filteredCities.length > 0 ? (
                 filteredCities.map((city, index) => (
                     <div key={index} className="city-card">
