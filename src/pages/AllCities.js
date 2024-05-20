@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import WeatherDataDisplay from "../components/WeatherDataDisplay/WeatherDataDisplay";
 
 function AllCities() {
 	return (
 		<>
+			<h1>All cities</h1>;
 			<WeatherDataDisplay />
 		</>
 	);

@@ -8,7 +8,6 @@ const WeatherDataDisplay = () => {
 
 	return (
 		<div className="weather-data-display">
-			<h1>All cities</h1>
 			{fetchedData?.list?.map(function (city, index) {
 				return (
 					<div key={index} className="city-card">
