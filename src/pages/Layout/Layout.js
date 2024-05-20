@@ -1,3 +1,4 @@
+// Layout.js
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.scss";
 
@@ -7,7 +8,7 @@ const Layout = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to="/">Favorites</Link>
+						<Link to="/favorites">Favorites</Link>
 					</li>
 					<li>
 						<Link to="/all-cities">All Cities</Link>
