@@ -10,7 +10,7 @@ const WeatherDataDisplay = () => {
 		<div className="weather-data-display">
 			<h1>All cities</h1>
 			{fetchedData?.list?.map(function (city, index) {
-				(
+				return (
 					<div key={index} className="city-card">
 						<h2>{city.name}</h2>
 						<p>Weather: {city.weather[0].description}</p>
