@@ -3,7 +3,7 @@ import WeatherDataDisplay from "../components/WeatherDataDisplay/WeatherDataDisp
 function AllCities() {
 	return (
 		<>
-			<h1>All cities</h1>;
+			<h1>All cities</h1>
 			<WeatherDataDisplay />
 		</>
 	);

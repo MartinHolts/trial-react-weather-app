@@ -3,7 +3,7 @@ import FavoriteCitiesDisplay from "../components/FavoriteCitiesDisplay/FavoriteC
 function Favorites() {
 	return (
 		<>
-			<h1>Favorites</h1>;
+			<h1>Favorites</h1>
 			<FavoriteCitiesDisplay />
 		</>
 	);
