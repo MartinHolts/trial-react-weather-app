@@ -21,6 +21,9 @@ const WeatherDataDisplay = () => {
 						<button onClick={function () { addToFavorites(city.id) }}>
 							Add to Favorites
 						</button>
+						<button onClick={function () { removeFromFavorites(city.id) }}>
+							Remove from Favorites
+						</button>
 					</div>
 				)
 			})}
