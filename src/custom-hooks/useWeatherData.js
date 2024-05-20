@@ -10,9 +10,9 @@ const useWeatherData = function () {
 				const cityIds = [
 					"588409",
 					"588335",
-					//"590031",
-					//"589580",
-					//"589379",
+					"590031",
+					"589580",
+					"589379",
 				]; // Tallinn, Tartu, Narva, Pärnu, Põltsamaa
 
 				// Fetches weather data for a group of cities identified by cityIds.
@@ -42,15 +42,14 @@ const useWeatherData = function () {
 		// Call fetchData initially
 		fetchData();
 
-		/*
-		// Set up an interval to refetch data every 10 seconds
-		const intervalId = setInterval(fetchData, 10000);
+		// Set up an interval to refetch data every 300 seconds (5 minutes)
+		const intervalId = setInterval(fetchData, 300000);
 
 		// On cleanup run the function to Clear the interval.
 		return function () {
 			clearInterval(intervalId);
 		}
-		*/
+
 	}, []);
 
 	return [data];
