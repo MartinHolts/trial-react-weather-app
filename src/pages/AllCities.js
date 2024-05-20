@@ -1,10 +1,10 @@
-import WeatherDataDisplay from "../components/WeatherDataDisplay/WeatherDataDisplay";
+import UnifiedViewPage from "../components/UnifiedViewPage/UnifiedViewPage";
 
 function AllCities() {
 	return (
 		<>
 			<h1>All cities</h1>
-			<WeatherDataDisplay />
+			<UnifiedViewPage />
 		</>
 	);
 }
