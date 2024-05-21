@@ -3,12 +3,13 @@ import useWeatherData from '../../custom-hooks/useWeatherData';
 import useFavorites from '../../custom-hooks/useFavorites';
 import './UnifiedViewPage.scss';
 
-const UnifiedViewPage = ({ viewMode }) => {
+const UnifiedViewPage = () => {
     const [fetchedData, setFetchedData] = useWeatherData();
     const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+    const [viewMode, setViewMode] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Filter cities based on search query and view mode
+    // Filter cities based on search query, view mode, and favorites status
     const citiesToShow = fetchedData?.list
         ? fetchedData.list.filter(city => {
             // Filter by view mode ('all' or 'favorites')
@@ -25,6 +26,7 @@ const UnifiedViewPage = ({ viewMode }) => {
                 return city.name.toLowerCase().includes(searchQuery.toLowerCase());
             })
         : [];
+
 
     return (
         <div className="unified-view-page">
@@ -56,8 +58,12 @@ const UnifiedViewPage = ({ viewMode }) => {
             ) : (
                 <p>No cities found.</p>
             )}
+
+            <button onClick={() => setViewMode(viewMode === 'all' ? 'favorites' : 'all')}>
+                Switch View
+            </button>
         </div>
     );
 };
 
-export default React.memo(UnifiedViewPage);
+export default UnifiedViewPage;

@@ -1,9 +1,12 @@
-// AllCities.js
-import React from 'react';
 import UnifiedViewPage from "../components/UnifiedViewPage/UnifiedViewPage";
 
-const AllCities = () => {
-	return <UnifiedViewPage viewMode="all" />;
-};
+function AllCities() {
+	return (
+		<>
+			<h1>All cities</h1>
+			<UnifiedViewPage />
+		</>
+	);
+}
 
 export default AllCities;

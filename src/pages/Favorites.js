@@ -1,18 +1,12 @@
-// Favorites.js
-import React, { useState } from 'react';
-import UnifiedViewPage from "../components/UnifiedViewPage/UnifiedViewPage";
+import FavoriteCitiesDisplay from "../components/FavoriteCitiesDisplay/FavoriteCitiesDisplay";
 
-const Favorites = () => {
-	const [viewMode, setViewMode] = useState('favorites');
-
+function Favorites() {
 	return (
-		<div>
-			<UnifiedViewPage viewMode={viewMode} />
-			<button onClick={() => setViewMode(viewMode === 'favorites' ? 'all' : 'favorites')}>
-				Switch View
-			</button>
-		</div>
+		<>
+			<h1>Favorites</h1>
+			<FavoriteCitiesDisplay />
+		</>
 	);
-};
+}
 
 export default Favorites;
