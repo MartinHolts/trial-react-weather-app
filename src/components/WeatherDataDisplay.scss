@@ -28,7 +28,6 @@
 	
 	.city-card {
 		padding: 16px;
-		margin-bottom: 20px;
 		border: 1px solid #eee;
 		border-radius: 4px;
 		background-color: #fff;
@@ -66,5 +65,9 @@
 		button:not(:first-of-type) {
 			margin-top: 8px;
 		}
+	}
+
+	.city-card:not(:last-child) {
+		margin-bottom: 20px;
 	}
 }
