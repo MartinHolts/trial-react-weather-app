@@ -52,16 +52,21 @@ function WeatherDataDisplay() {
 
 			{filteredCities.length > 0 ? (
 				filteredCities.map(function (city, index) {
+					const isFavorite = favorites.includes(city.id);
 					return (
-						<div key={index} className={`city-card ${favorites.includes(city.id) ? 'highlighted' : ''}`}>
+						<div key={index} className={`city-card ${isFavorite ? 'highlighted' : ''}`}>
 							<h2>{city.name}</h2>
 							<p>Weather: {city.weather[0]?.description}</p>
 							<p>Temperature: {city.main?.temp}°C</p>
 							<p>Feels Like: {city.main?.feels_like}°C</p>
 							<p>Humidity: {city.main?.humidity}%</p>
 							<p>Wind Speed: {city.wind?.speed} m/s</p>
-							<button onClick={function () { handleAddToFavorites(city.id); }}>
-								Add to Favorites
+							<button
+								onClick={function () { handleAddToFavorites(city.id); }}
+								disabled={isFavorite}
+								className={isFavorite ? 'disabled-button' : ''}
+							>
+								{isFavorite ? 'In Favorites' : 'Add to Favorites'}
 							</button>
 							<button onClick={function () { handleRemoveFromFavorites(city.id); }}>
 								Remove from Favorites
