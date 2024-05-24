@@ -15,8 +15,8 @@ const useWeatherData = function () {
 					"588409",
 					"588335",
 					"590031",
-					// "589580",
-					// "589379",
+					"589580",
+					"589379",
 				]; // Tallinn, Tartu, Narva, Pärnu, Põltsamaa
 
 				// Fetches weather data for a group of cities identified by cityIds.
