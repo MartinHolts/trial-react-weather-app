@@ -19,17 +19,13 @@ function WeatherDataDisplay() {
 
 	const filteredCities = filterCities();
 
-	function handleSearchChange(e) {
-		setSearchQuery(e.target.value);
-	}
-
 	return (
 		<div className="weather-data-display">
 			<input
 				type="text"
 				placeholder="Search..."
 				value={searchQuery}
-				onChange={handleSearchChange}
+				onChange={function (e) { setSearchQuery(e.target.value); }}
 				style={{ marginBottom: '10px' }} // Add some margin-bottom for spacing
 			/>
 
