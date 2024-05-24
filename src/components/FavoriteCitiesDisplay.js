@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import useFavorites from '../../custom-hooks/useFavorites';
-import useWeatherData from '../../custom-hooks/useWeatherData';
+import useFavorites from '../custom-hooks/useFavorites';
+import useWeatherData from '../custom-hooks/useWeatherData';
 import "./FavoriteCitiesDisplay.scss";
 
 const FavoriteCitiesDisplay = () => {

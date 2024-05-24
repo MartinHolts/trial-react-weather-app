@@ -1,12 +1,6 @@
-import React from 'react';
-import WeatherDataDisplay from "../components/WeatherDataDisplay/WeatherDataDisplay";
+import WeatherDataDisplay from "../components/WeatherDataDisplay";
 
-function AllCities({ data }) {
-	console.log(data); // Log the state to verify it's updated
-	if (!data) {
-		return <div>Loading...</div>;
-	}
-
+function AllCities() {
 	return (
 		<>
 			<h1>AllCities</h1>
