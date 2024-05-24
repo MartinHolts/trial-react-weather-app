@@ -33,14 +33,17 @@
 		margin-bottom: 20px;
 		
 		h2 {
-			margin-top: 0;
+			margin-bottom: 20px;
 			font-size: 18px;
 			font-weight: bold;
 		}
-		
+
 		p {
-			margin-top: 8px;
 			color: #666;
+		}
+		
+		p:not(:first-of-type) {
+			margin-top: 8px;
 		}
 		
 		button {
@@ -50,14 +53,17 @@
 			border-radius: 4px;
 			cursor: pointer; // Pointer cursor on hover
 			padding: 8px 12px;
-			margin-top: 8px;
 			
 			&:hover {
 				background-color: darken(#007bff, 10%); // Slightly darker blue on hover
 			}
 		}
 		button:first-of-type {
+			margin-top: 20px;
 			margin-right: 10px;
+		}
+		button:not(:first-of-type) {
+			margin-top: 8px;
 		}
 	}
 }
