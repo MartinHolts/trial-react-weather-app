@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import useFavorites from '../custom-hooks/useFavorites';
 import useWeatherData from '../custom-hooks/useWeatherData';
+import useFavorites from '../custom-hooks/useFavorites';
 import "./FavoriteCitiesDisplay.scss";
 
 function FavoriteCitiesDisplay() {
+    const [fetchedData] = useWeatherData();
     const { favorites, removeFromFavorites } = useFavorites();
-    const [data] = useWeatherData();
     const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
     // Filter cities based on search query
     function filterCities() {
-        return data && data.list
-            ? data.list.filter(function (city) {
+        return fetchedData && fetchedData.list
+            ? fetchedData.list.filter(function (city) {
                 return favorites.includes(city.id) &&
                     city.name.toLowerCase().startsWith(searchQuery.toLowerCase());
             })
