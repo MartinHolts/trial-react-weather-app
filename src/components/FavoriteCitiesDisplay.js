@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useFavorites from '../custom-hooks/useFavorites';
 import useWeatherData from '../custom-hooks/useWeatherData';
 import "./FavoriteCitiesDisplay.scss";
 
 const FavoriteCitiesDisplay = () => {
     const { favorites, removeFromFavorites } = useFavorites();
-    const [data, setData] = useWeatherData();
+    const [data] = useWeatherData();
     const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
     // Filter cities based on search query
