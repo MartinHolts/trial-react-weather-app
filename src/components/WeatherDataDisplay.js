@@ -21,12 +21,11 @@ function WeatherDataDisplay() {
 
 	return (
 		<div className="weather-data-display">
-			<input
+			<input className="search-input"
 				type="text"
 				placeholder="Search..."
 				value={searchQuery}
 				onChange={function (e) { setSearchQuery(e.target.value); }}
-				style={{ marginBottom: '10px' }} // Add some margin-bottom for spacing
 			/>
 
 			{filteredCities.length > 0 ? (
