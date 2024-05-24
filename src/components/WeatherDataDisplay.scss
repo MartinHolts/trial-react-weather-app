@@ -50,5 +50,8 @@
 				background-color: darken(#007bff, 10%); // Slightly darker blue on hover
 			}
 		}
+		button:first-of-type {
+			margin-right: 20px;
+		}
 	}
 }
