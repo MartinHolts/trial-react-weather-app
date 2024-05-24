@@ -11,7 +11,7 @@ const WeatherDataDisplay = () => {
 	// Filter cities based on search query
 	const filteredCities = fetchedData?.list
 		? fetchedData.list.filter(city =>
-			city.name.toLowerCase().includes(searchQuery.toLowerCase())
+			city.name.toLowerCase().startsWith(searchQuery.toLowerCase())
 		)
 		: [];
 

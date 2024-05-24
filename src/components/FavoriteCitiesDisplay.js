@@ -12,7 +12,7 @@ const FavoriteCitiesDisplay = () => {
     const filteredCities = data && data.list
         ? data.list.filter(city =>
             favorites.includes(city.id) &&
-            city.name.toLowerCase().includes(searchQuery.toLowerCase())
+            city.name.toLowerCase().startsWith(searchQuery.toLowerCase())
         )
         : [];
 
