@@ -58,10 +58,12 @@
 				background-color: darken(#007bff, 10%); /* Slightly darker blue on hover */
 			}
 		}
+
 		button:first-of-type {
 			margin-top: 20px;
 			margin-right: 10px;
 		}
+		
 		button:not(:first-of-type) {
 			margin-top: 8px;
 		}
