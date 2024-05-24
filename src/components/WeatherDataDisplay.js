@@ -19,15 +19,6 @@ function WeatherDataDisplay() {
 
 	const filteredCities = filterCities();
 
-	// Highlight cities in favorites
-	function highlightCities(cities) {
-		return cities.filter(function (city) {
-			return favorites.includes(city.id);
-		});
-	}
-
-	const highlightedCities = highlightCities(filteredCities);
-
 	function handleSearchChange(e) {
 		setSearchQuery(e.target.value);
 	}
