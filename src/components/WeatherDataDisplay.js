@@ -23,14 +23,6 @@ function WeatherDataDisplay() {
 		setSearchQuery(e.target.value);
 	}
 
-	function handleAddToFavorites(cityId) {
-		addToFavorites(cityId);
-	}
-
-	function handleRemoveFromFavorites(cityId) {
-		removeFromFavorites(cityId);
-	}
-
 	return (
 		<div className="weather-data-display">
 			<input
@@ -53,13 +45,13 @@ function WeatherDataDisplay() {
 							<p>Humidity: {city.main?.humidity}%</p>
 							<p>Wind Speed: {city.wind?.speed} m/s</p>
 							<button
-								onClick={function () { handleAddToFavorites(city.id); }}
+								onClick={function () { addToFavorites(city.id); }}
 								disabled={isFavorite}
 								className={isFavorite ? 'disabled-button' : ''}
 							>
 								{isFavorite ? 'In Favorites' : 'Add to Favorites'}
 							</button>
-							<button onClick={function () { handleRemoveFromFavorites(city.id); }}>
+							<button onClick={function () { removeFromFavorites(city.id); }}>
 								Remove from Favorites
 							</button>
 						</div>
