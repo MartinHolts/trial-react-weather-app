@@ -2,12 +2,12 @@ import { useState, useEffect, useMemo } from "react";
 
 const useWeatherData = function () {
 	// Local Storage: The useState hook is initialized with a function that retrieves data from localStorage if it exists. If not, it defaults to an empty string.
-	const [data, setData] = useState(() => {
+	const [data, setData] = useState(function () {
 		const savedData = localStorage.getItem("weatherData");
 		return savedData ? JSON.parse(savedData) : "";
 	});
 
-	useEffect(() => {
+	useEffect(function () {
 		async function fetchData() {
 			try {
 				const apiKey = "3cfcda1c67930c9db4bb6363b4d06023";
@@ -51,13 +51,15 @@ const useWeatherData = function () {
 		const intervalId = setInterval(fetchData, 300000);
 
 		// On cleanup run the function to Clear the interval.
-		return () => {
+		return function () {
 			clearInterval(intervalId);
 		};
 	}, [data]);
 
 	// Memoization: useMemo is used to memoize the data.
-	const memoizedData = useMemo(() => data, [data]);
+	const memoizedData = useMemo(function () {
+		return data;
+	}, [data]);
 
 	return [memoizedData];
 };
