@@ -1,17 +1,17 @@
 .weather-data-display {
-	max-width: 800px; // Maximum width for the container
-	margin: auto; // Center the container horizontally
-	padding: 20px; // Padding around the content
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-	border-radius: 8px; // Rounded corners for the container
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 	
 	.search-input {
-		font-size: 14px; // Font size for the input
-		padding: 8px; // Padding inside the input
-		border: 1px solid #ccc; // Light border around the input
-		border-radius: 4px; // Rounded corners for the input
-		width: 100%; // Full width of the parent container
-		margin-bottom: 20px; // Space below the input
+		font-size: 14px;
+		padding: 8px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		width: 100%;
+		margin-bottom: 20px;
 		
 		&:focus {
 			outline: none; // Remove the focus outline
@@ -20,31 +20,31 @@
 	}
 	
 	.city-card {
-		background-color: #fff; // White background for each card
-		border: 1px solid #eee; // Light border around each card
-		border-radius: 4px; // Rounded corners for each card
-		padding: 16px; // Padding inside each card
-		margin-bottom: 20px; // Space below each card
+		background-color: #fff;
+		border: 1px solid #eee;
+		border-radius: 4px;
+		padding: 16px;
+		margin-bottom: 20px;
 		
 		h2 {
-			margin-top: 0; // Remove top margin from the city name
-			font-size: 18px; // Larger font size for the city name
-			font-weight: bold; // Bold font weight for the city name
+			margin-top: 0;
+			font-size: 18px;
+			font-weight: bold;
 		}
 		
 		p {
-			margin-top: 8px; // Space above each paragraph
-			color: #666; // Darker text color for readability
+			margin-top: 8px;
+			color: #666;
 		}
 		
 		button {
-			background-color: #007bff; // Blue background for buttons
-			color: white; // White text color for buttons
-			border: none; // No border for buttons
-			border-radius: 4px; // Rounded corners for buttons
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 4px;
 			cursor: pointer; // Pointer cursor on hover
-			padding: 8px 12px; // Padding inside the buttons
-			margin-top: 8px; // Space above the button
+			padding: 8px 12px;
+			margin-top: 8px;
 			
 			&:hover {
 				background-color: darken(#007bff, 10%); // Slightly darker blue on hover
