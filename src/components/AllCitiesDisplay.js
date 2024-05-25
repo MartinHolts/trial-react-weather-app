@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useWeatherData from "../custom-hooks/useWeatherData";
 import useFavorites from "../custom-hooks/useFavorites";
-import "./WeatherDataDisplay.scss";
+import "./CitiesDisplay.scss";
 
 function WeatherDataDisplay() {
 	const [fetchedData] = useWeatherData();
