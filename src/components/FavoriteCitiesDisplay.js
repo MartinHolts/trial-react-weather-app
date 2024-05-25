@@ -8,7 +8,7 @@ function FavoriteCitiesDisplay() {
     const { favorites, removeFromFavorites } = useFavorites();
     const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
-    // Filter cities based on search query
+    // filters the list of cities based on two criteria: whether the city is included in the favorites list and whether the city's name starts with the search query.
     function filterCities() {
         return fetchedData && fetchedData.list
             ? fetchedData.list.filter(function (city) {

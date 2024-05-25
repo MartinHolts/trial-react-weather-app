@@ -8,7 +8,7 @@ function WeatherDataDisplay() {
 	const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
 	const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
-	// Filter cities based on search query
+	// filters the list of cities based on one criteria: whether the city's name starts with the search query.
 	function filterCities() {
 		return fetchedData?.list
 			? fetchedData.list.filter(function (city) {
