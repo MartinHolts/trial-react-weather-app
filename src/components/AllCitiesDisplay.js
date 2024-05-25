@@ -10,11 +10,18 @@ function WeatherDataDisplay() {
 
 	// filters the list of cities based on one criteria: whether the city's name starts with the search query.
 	function filterCities() {
-		return fetchedData?.list
-			? fetchedData.list.filter(function (city) {
+		// Check if fetchedData exists and has a list property
+		if (fetchedData && fetchedData.list) {
+
+			// Return new filtered array only with elements that pass checks.
+			return fetchedData.list.filter(function (city) {
+				// Check if the city starts with the search query
 				return city.name.toLowerCase().startsWith(searchQuery.toLowerCase());
 			})
-			: [];
+		} else {
+			// If fetchedData or its list property is not present, return an empty array
+			return [];
+		}
 	}
 
 	const filteredCities = filterCities();
