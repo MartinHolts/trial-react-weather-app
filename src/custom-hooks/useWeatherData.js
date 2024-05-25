@@ -47,7 +47,7 @@ const useWeatherData = function () {
 			fetchData();
 		}
 
-		// Set up an interval to refetch data every 300 seconds (5 minutes). This way 1000 API calls limit lasts 14 hours.
+		// Set up an interval to refetch data every 300 seconds (5 minutes). This way 1000 API calls limit lasts 14 hours. With 10 seconds it lasts 30 minutes.
 		const intervalId = setInterval(fetchData, 300000);
 
 		// On cleanup run the function to Clear the interval.
