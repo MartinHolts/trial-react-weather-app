@@ -1,37 +1,33 @@
-/* Global styles */
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
+@import './../style.scss'; /* Import global styles */
+@import './../_variables.scss'; /* Import global variables */
 
 .weather-data-display {
 	max-width: 800px;
 	padding: 20px;
 	margin: auto;
-    border: 1px solid #eee;
+    border: 1px solid $lightGrayBorder;
 	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 6px $boxShadow;
 	
 	.search-input {
 		width: 100%;
 		padding: 8px;
 		margin-bottom: 20px;
-		border: 1px solid #ccc;
+		border: 1px solid $grayBorder;
 		border-radius: 4px;
 		font-size: 14px;
 		
 		&:focus {
-			border-color: #007bff; /* Change the border color on focus */
+			border-color: $blueFocusBorder; /* Change the border color on focus */
 			outline: none; /* Remove the focus outline */
 		}
 	}
 	
 	.city-card {
 		padding: 16px;
-		border: 1px solid #eee;
+		border: 1px solid $grayBorder;
 		border-radius: 4px;
-		background-color: #fff;
+		background-color: $whiteBackground;
 		
 		h2 {
 			margin-bottom: 20px;
@@ -40,7 +36,7 @@
 		}
 
 		p {
-			color: #666;
+			color: $grayText;
 		}
 		
 		p:not(:first-of-type) {
@@ -52,11 +48,11 @@
 			border: none;
 			border-radius: 4px;
 			color: white;
-			background-color: #007bff;
+			background-color: $blueFocusBorder;
 			cursor: pointer; /* Pointer cursor on hover */
 			
 			&:hover {
-				background-color: darken(#007bff, 10%); /* Slightly darker blue on hover */
+				background-color: darken($blueFocusBorder, 10%); /* Slightly darker blue on hover */
 			}
 		}
 
