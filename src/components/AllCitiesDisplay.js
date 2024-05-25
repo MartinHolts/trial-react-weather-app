@@ -42,7 +42,6 @@ function WeatherDataDisplay() {
 							<button
 								onClick={function () { addToFavorites(city.id); }}
 								disabled={isFavorite}
-								className={isFavorite ? 'disabled-button' : ''}
 							>
 								{isFavorite ? 'In Favorites' : 'Add to Favorites'}
 							</button>

@@ -68,6 +68,12 @@
 		button:not(:first-of-type) {
 			margin-top: 8px;
 		}
+		
+		button:disabled {
+			opacity: 0.6;
+			background-color: dimgrey;
+			cursor: not-allowed;
+		}
 	}
 
 	.city-card:not(:last-child) {
