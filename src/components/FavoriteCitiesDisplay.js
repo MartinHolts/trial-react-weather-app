@@ -8,20 +8,19 @@ function FavoriteCitiesDisplay() {
     const { favorites, removeFromFavorites } = useFavorites();
     const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
-    // filters the list of cities based on the search query
+    // filters the list of cities based on two criteria: whether the city is included in the favorites list and whether the city's name starts with the search query.
     function filterCities() {
         // Check if fetchedData exists and has a list property
         if (fetchedData && fetchedData.list) {
-            // Filter the cities based on the search query
+
+            // Return new filtered array only with elements that pass checks.
             return fetchedData.list.filter(function (city) {
-                // Check if the city's name starts with the search query
-                if (city.name.toLowerCase().startsWith(searchQuery.toLowerCase())) {
+                // Check if the city is in the favorites and its name starts with the search query
+                if (favorites.includes(city.id) && city.name.toLowerCase().startsWith(searchQuery.toLowerCase())) {
                     return true;
                 } else {
                     return false;
                 }
-            }).filter(function (city) {
-                return favorites.includes(city.id);
             });
         } else {
             // If fetchedData or its list property is not present, return an empty array
