@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.scss";
 
-const Layout = () => {
+function Layout() {
 	return (
 		<div className="layout">
 			<nav>
