@@ -1,4 +1,4 @@
-import WeatherDataDisplay from "../components/WeatherDataDisplay";
+import WeatherDataDisplay from "../components/AllCitiesDisplay";
 
 function AllCities() {
 	return (

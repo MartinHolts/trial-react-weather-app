@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useWeatherData from '../custom-hooks/useWeatherData';
 import useFavorites from '../custom-hooks/useFavorites';
-import "./FavoriteCitiesDisplay.scss";
+import "./WeatherDataDisplay.scss";
 
 function FavoriteCitiesDisplay() {
     const [fetchedData] = useWeatherData();
@@ -21,13 +21,12 @@ function FavoriteCitiesDisplay() {
     const filteredCities = filterCities();
 
     return (
-        <div className="favorite-cities-display">
-            <input
+        <div className="weather-data-display">
+            <input className="search-input"
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={function (e) { setSearchQuery(e.target.value); }}
-                style={{ marginBottom: '10px' }} // Add some margin-bottom for spacing
             />
 
             {filteredCities.length > 0 ? (
