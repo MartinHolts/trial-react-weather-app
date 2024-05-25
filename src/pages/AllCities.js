@@ -1,4 +1,5 @@
 import WeatherDataDisplay from "../components/AllCitiesDisplay";
+import './../style.scss'; // Import global styles
 
 function AllCities() {
 	return (
