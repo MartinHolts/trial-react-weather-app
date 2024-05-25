@@ -22,13 +22,13 @@
 			
 			li {
 				a {
-					color: #333;
+					color: $navLightBlack;
 					transition: color 0.3s ease; /* Smooth color transition */
 					font-weight: bold;
 					text-decoration: none;
 					
 					&:hover {
-						color: #007bff; /* Hover color */
+						color: $blueHover; /* Hover color */
 					}
 				}
 			}
